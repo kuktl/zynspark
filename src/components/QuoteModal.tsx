@@ -11,6 +11,8 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
+const FORMCARRY_ENDPOINT = "https://formcarry.com/s/cWVBr3t_5Lr";
+
 export default function QuoteModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<"quick" | "whatsapp">("quick");
@@ -86,14 +88,14 @@ export default function QuoteModal() {
     const endpoint =
       localStorage.getItem("zynspark_formcarry_endpoint") ||
       (import.meta as any).env?.VITE_FORMCARRY_ENDPOINT ||
-      "";
+      FORMCARRY_ENDPOINT;
     if (endpoint.trim()) {
       let url = endpoint.trim();
       if (!url.startsWith("http")) {
         url = `https://formcarry.com/s/${url}`;
       }
       try {
-        await fetch(url, {
+        const response = await fetch(url, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -101,8 +103,14 @@ export default function QuoteModal() {
           },
           body: JSON.stringify(payload),
         });
+        if (!response.ok) {
+          throw new Error(`Form submission failed with status ${response.status}`);
+        }
       } catch (err) {
         console.warn("Formcarry dispatch warning:", err);
+        alert("We couldn't send your request right now. Please try again or contact us on WhatsApp.");
+        setIsSubmitting(false);
+        return;
       }
     }
 

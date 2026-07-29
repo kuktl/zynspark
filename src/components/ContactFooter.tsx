@@ -3,6 +3,8 @@ import { Mail, Phone, Clock, MapPin, Send, CheckCircle2, ArrowRight, AlertCircle
 import { motion } from "motion/react";
 import { ContactFormInput } from "../types";
 
+const FORMCARRY_ENDPOINT = "https://formcarry.com/s/cWVBr3t_5Lr";
+
 export default function ContactFooter() {
   const [formInput, setFormInput] = useState<ContactFormInput>({
     name: "",
@@ -19,7 +21,7 @@ export default function ContactFooter() {
 
   // Formcarry integrations state
   const [formcarryEndpoint, setFormcarryEndpoint] = useState<string>(() => {
-    return localStorage.getItem("zynspark_formcarry_endpoint") || (import.meta as any).env?.VITE_FORMCARRY_ENDPOINT || "";
+    return localStorage.getItem("zynspark_formcarry_endpoint") || (import.meta as any).env?.VITE_FORMCARRY_ENDPOINT || FORMCARRY_ENDPOINT;
   });
   const [formcarryReturnUrl, setFormcarryReturnUrl] = useState<string>(() => {
     return localStorage.getItem("zynspark_formcarry_return_url") || (import.meta as any).env?.VITE_FORMCARRY_RETURN_URL || "";
@@ -27,7 +29,7 @@ export default function ContactFooter() {
   const [isFormcarryEnabled, setIsFormcarryEnabled] = useState<boolean>(() => {
     const saved = localStorage.getItem("zynspark_formcarry_enabled");
     if (saved !== null) return saved === "true";
-    return !!(localStorage.getItem("zynspark_formcarry_endpoint") || (import.meta as any).env?.VITE_FORMCARRY_ENDPOINT);
+    return true;
   });
   const [formError, setFormError] = useState<string | null>(null);
 
