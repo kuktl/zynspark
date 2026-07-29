@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Zynspark",
+  "description": "Zynspark is a full-funnel digital growth agency that builds high-converting websites, runs performance advertising campaigns, and automates lead conversion pipelines with professional precision.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
