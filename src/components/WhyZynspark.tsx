@@ -50,7 +50,7 @@ export default function WhyZynspark() {
               </p>
               <motion.div
                 className="p-5 bg-brand-gray-light border border-brand-gray-border rounded-sm shadow-sm space-y-2 cursor-pointer"
-                whileHover={{ y: -4, scale: 1.015, borderColor: "rgba(176,141,87,0.5)" }}
+                whileHover={{ y: -4, scale: 1.015, borderColor: "rgba(255,107,44,0.5)" }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
                 <p className="text-xs md:text-sm font-semibold text-brand-navy leading-relaxed">
@@ -73,7 +73,7 @@ export default function WhyZynspark() {
                     y: pillar.bounce.y,
                     rotate: pillar.bounce.rotate,
                     scale: pillar.bounce.scale,
-                    boxShadow: "0 20px 40px rgba(176,141,87,0.15)",
+                    boxShadow: "0 20px 40px rgba(255,107,44,0.15)",
                     transition: {
                       type: "spring",
                       stiffness: pillar.bounce.stiffness,
@@ -85,7 +85,7 @@ export default function WhyZynspark() {
                   <div className="absolute top-0 left-0 w-full h-[2px] bg-transparent group-hover:bg-brand-gold transition-colors duration-300" />
                   <div>
                     <motion.div
-                      className="w-12 h-12 rounded-sm bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 shadow-inner group-hover:bg-brand-gold group-hover:text-white transition-all duration-300"
+                      className="w-12 h-12 rounded-sm bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-6 shadow-inner group-hover:bg-brand-gold group-hover:text-paper transition-all duration-300"
                       whileHover={{ scale: 1.2, rotate: 360 }}
                       transition={{ type: "spring", stiffness: 350, damping: 10 }}
                     >

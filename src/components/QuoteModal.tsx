@@ -187,7 +187,7 @@ export default function QuoteModal() {
                       onClick={() => setActiveTab(tab.id as any)}
                       className={`flex-1 py-2 px-3 rounded-md text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 cursor-pointer transition-all ${
                         isActive
-                          ? "bg-brand-gold text-white shadow-md font-extrabold"
+                          ? "bg-brand-gold text-paper shadow-md font-extrabold"
                           : "bg-brand-cream text-brand-navy hover:bg-brand-cream/80 border border-brand-gray-border"
                       }`}
                       whileHover={{ scale: 1.02 }}
@@ -231,7 +231,7 @@ export default function QuoteModal() {
 
                   <motion.button
                     onClick={() => setIsOpen(false)}
-                    className="px-6 py-2.5 bg-brand-gold text-white rounded-sm font-bold text-xs uppercase tracking-widest cursor-pointer shadow-md"
+                    className="px-6 py-2.5 bg-brand-gold text-paper rounded-sm font-bold text-xs uppercase tracking-widest cursor-pointer shadow-md"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -300,7 +300,7 @@ export default function QuoteModal() {
                   <motion.button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3.5 bg-brand-gold text-white font-extrabold text-xs tracking-widest uppercase rounded-sm shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                    className="w-full py-3.5 bg-brand-gold text-paper font-extrabold text-xs tracking-widest uppercase rounded-sm shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -389,7 +389,7 @@ export default function QuoteModal() {
 
                   <motion.button
                     onClick={openWhatsAppDirect}
-                    className="w-full py-3.5 bg-green-600 hover:bg-green-700 text-white font-extrabold text-xs tracking-widest uppercase rounded-sm shadow-md flex items-center justify-center gap-2 cursor-pointer mt-2"
+                    className="w-full py-3.5 bg-green-600 hover:bg-green-700 text-paper font-extrabold text-xs tracking-widest uppercase rounded-sm shadow-md flex items-center justify-center gap-2 cursor-pointer mt-2"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >

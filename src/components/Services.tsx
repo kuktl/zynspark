@@ -138,7 +138,7 @@ export default function Services() {
                     y: currentBounce.y,
                     scale: currentBounce.scale,
                     rotate: currentBounce.rotate,
-                    boxShadow: "0 20px 40px rgba(176,141,87,0.15)",
+                    boxShadow: "0 20px 40px rgba(255,107,44,0.15)",
                     transition: {
                       type: "spring",
                       stiffness: currentBounce.stiffness,
@@ -154,7 +154,7 @@ export default function Services() {
                     {/* Header */}
                     <div className="flex items-start gap-4 mb-6">
                       <motion.div
-                        className="w-12 h-12 rounded-sm bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-white transition-all duration-300 shrink-0 shadow-inner"
+                        className="w-12 h-12 rounded-sm bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-paper transition-all duration-300 shrink-0 shadow-inner"
                         whileHover={{ rotate: 360, scale: 1.15 }}
                         transition={{ type: "spring", stiffness: 300, damping: 10 }}
                       >
@@ -185,7 +185,7 @@ export default function Services() {
                           {solution.specialSearchTypes.map((st, sIdx) => (
                             <motion.div
                               key={sIdx}
-                              className="space-y-1 p-2 rounded-sm hover:bg-white/50 transition-colors"
+                              className="space-y-1 p-2 rounded-sm hover:bg-panel/50 transition-colors"
                               whileHover={{ x: 6, scale: 1.01 }}
                               transition={{ type: "spring", stiffness: 400 }}
                             >
@@ -211,7 +211,7 @@ export default function Services() {
                           whileHover={{
                             x: 5,
                             scale: 1.03,
-                            color: "#B08D57",
+                            color: "#FF6B2C",
                             transition: { type: "spring", stiffness: 450, damping: 10 }
                           }}
                         >
@@ -231,7 +231,7 @@ export default function Services() {
                           })
                         );
                       }}
-                      className="w-full py-2.5 px-4 bg-brand-cream border border-brand-gold/40 hover:bg-brand-gold hover:text-white text-brand-navy font-bold text-xs uppercase tracking-wider rounded-sm flex items-center justify-center gap-2 cursor-pointer transition-all duration-200"
+                      className="w-full py-2.5 px-4 bg-brand-cream border border-brand-gold/40 hover:bg-brand-gold hover:text-paper text-brand-navy font-bold text-xs uppercase tracking-wider rounded-sm flex items-center justify-center gap-2 cursor-pointer transition-all duration-200"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >

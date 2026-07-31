@@ -86,13 +86,13 @@ export default function Results() {
             return (
               <AnimatedSection key={idx} delay={idx * 0.08} direction="up">
                 <div
-                  className="group bg-brand-gray-light border border-brand-gray-border p-8 rounded-sm hover:border-brand-gold/40 hover:shadow-[0_10px_25px_rgba(176,141,87,0.1)] transition-all duration-300 relative h-full flex flex-col justify-between"
+                  className="group bg-brand-gray-light border border-brand-gray-border p-8 rounded-sm hover:border-brand-gold/40 hover:shadow-[0_10px_25px_rgba(255,107,44,0.1)] transition-all duration-300 relative h-full flex flex-col justify-between"
                   id={`industry-card-${idx}`}
                 >
                   <div className="absolute top-0 left-0 w-full h-[2px] bg-transparent group-hover:bg-brand-gold transition-colors duration-300" />
                   
                   <div>
-                    <div className="w-10 h-10 rounded-sm bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-5 group-hover:bg-brand-gold group-hover:text-white transition-all duration-300">
+                    <div className="w-10 h-10 rounded-sm bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold mb-5 group-hover:bg-brand-gold group-hover:text-paper transition-all duration-300">
                       <Icon className="w-5 h-5" />
                     </div>
                     <h3 className="font-serif text-lg font-extrabold text-brand-navy mb-2">
@@ -124,7 +124,7 @@ export default function Results() {
           {testimonials.map((t, idx) => (
             <AnimatedSection key={idx} delay={idx * 0.1} direction="up">
               <div
-                className="group border border-brand-gray-border p-8 bg-brand-gray-light flex flex-col justify-between hover:border-brand-gold/30 hover:shadow-[0_10px_30px_rgba(176,141,87,0.12)] transition-all duration-300 rounded-sm relative h-full"
+                className="group border border-brand-gray-border p-8 bg-brand-gray-light flex flex-col justify-between hover:border-brand-gold/30 hover:shadow-[0_10px_30px_rgba(255,107,44,0.12)] transition-all duration-300 rounded-sm relative h-full"
                 id={`testimonial-${idx}`}
               >
                 <div className="absolute top-0 left-0 w-full h-[2px] bg-transparent group-hover:bg-brand-gold transition-colors duration-300" />

@@ -323,19 +323,19 @@ export default function ContactFooter() {
                   </h4>
                   <ul className="space-y-4">
                     <li className="flex items-start gap-3 text-xs text-brand-navy-light/85">
-                      <span className="w-6 h-6 rounded-full bg-brand-gold text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">1</span>
+                      <span className="w-6 h-6 rounded-full bg-brand-gold text-paper text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">1</span>
                       <div>
                         <strong>Discovery Review:</strong> Our team will analyze your requirements and existing online presence.
                       </div>
                     </li>
                     <li className="flex items-start gap-3 text-xs text-brand-navy-light/85">
-                      <span className="w-6 h-6 rounded-full bg-brand-gold text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">2</span>
+                      <span className="w-6 h-6 rounded-full bg-brand-gold text-paper text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">2</span>
                       <div>
                         <strong>Consultation Call:</strong> We'll reach out to schedule an initial discussion about your goals.
                       </div>
                     </li>
                     <li className="flex items-start gap-3 text-xs text-brand-navy-light/85">
-                      <span className="w-6 h-6 rounded-full bg-brand-gold text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">3</span>
+                      <span className="w-6 h-6 rounded-full bg-brand-gold text-paper text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">3</span>
                       <div>
                         <strong>Actionable Proposal:</strong> We'll present a clear, custom strategy tailored to your growth objectives.
                       </div>
@@ -479,12 +479,12 @@ export default function ContactFooter() {
                   <motion.button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full inline-flex items-center justify-center py-4 bg-brand-gold text-white border border-brand-gold font-bold text-[11px] tracking-widest uppercase rounded-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer shadow-md shadow-brand-gold/10"
+                    className="w-full inline-flex items-center justify-center py-4 bg-brand-gold text-paper border border-brand-gold font-bold text-[11px] tracking-widest uppercase rounded-sm disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer shadow-md shadow-brand-gold/10"
                     id="submit-form-button"
                     whileHover={{
                       scale: 1.05,
                       y: -5,
-                      boxShadow: "0 15px 30px rgba(176,141,87,0.35)",
+                      boxShadow: "0 15px 30px rgba(255,107,44,0.35)",
                       transition: { type: "spring", stiffness: 450, damping: 10 },
                     }}
                     whileTap={{ scale: 0.95 }}
@@ -515,7 +515,7 @@ export default function ContactFooter() {
             {/* Logo Wordmark column */}
             <div className="md:col-span-1">
               <a href="#" className="flex items-center gap-2 mb-5">
-                <span className="w-8 h-8 rounded-sm bg-brand-gold text-white flex items-center justify-center font-serif font-black text-lg tracking-wider">
+                <span className="w-8 h-8 rounded-sm bg-brand-gold text-paper flex items-center justify-center font-serif font-black text-lg tracking-wider">
                   Z
                 </span>
                 <span className="font-serif text-xl font-extrabold tracking-tight text-brand-navy uppercase">
@@ -609,7 +609,7 @@ export default function ContactFooter() {
               <a href="#" className="hover:text-brand-gold transition-colors duration-200">
                 Terms of Service
               </a>
-              <a href="#" className="hover:text-white transition-colors duration-200">
+              <a href="#" className="hover:text-paper transition-colors duration-200">
                 Sitemap
               </a>
             </div>

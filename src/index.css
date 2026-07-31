@@ -4,15 +4,28 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Space Grotesk", sans-serif;
-  
-  --color-brand-navy: #14213D;              /* Deep Navy for Primary / Headings */
-  --color-brand-navy-light: #343434;        /* Charcoal for Body Text */
-  --color-brand-charcoal: #343434;          /* Charcoal for Body Text */
-  --color-brand-gold: #B08D57;              /* Muted Gold for Premium Accent */
-  --color-brand-cream: #F8F6F1;             /* Warm Ivory for Main Background */
-  --color-brand-section: #EEEAE2;           /* Soft Cream for Section Background */
-  --color-brand-gray-light: #FFFFFF;        /* Soft White for Cards */
-  --color-brand-gray-border: #DDD8CE;       /* Warm Grey for Borders */
+
+  /* Zynspark dark-mode colour system */
+  --color-ink: #0A0A0F;
+  --color-panel: #15141C;
+  --color-panel-2: #1B1A24;
+  --color-spark: #FF6B2C;
+  --color-spark-dim: #B8531F;
+  --color-volt: #4DE5FF;
+  --color-volt-dim: #2E7E8F;
+  --color-paper: #F3F1EA;
+  --color-muted: #8B889A;
+  --color-line: #2A2933;
+
+  /* Compatibility aliases keep the component classes semantically stable. */
+  --color-brand-navy: var(--color-paper);
+  --color-brand-navy-light: var(--color-muted);
+  --color-brand-charcoal: var(--color-paper);
+  --color-brand-gold: var(--color-spark);
+  --color-brand-cream: var(--color-ink);
+  --color-brand-section: var(--color-panel-2);
+  --color-brand-gray-light: var(--color-panel);
+  --color-brand-gray-border: var(--color-line);
 }
 
 @layer base {
@@ -32,16 +45,16 @@
   }
 }
 
-/* Custom premium grid and geometric background patterns */
+/* Subtle technical grid for the dark interface */
 .bg-grid-pattern {
   background-size: 50px 50px;
   background-image: 
-    linear-gradient(to right, rgba(20, 33, 61, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(20, 33, 61, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgb(243 241 234 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(243 241 234 / 0.045) 1px, transparent 1px);
 }
 
 .glow-glow {
-  filter: drop-shadow(0 0 20px rgba(176, 141, 87, 0.25));
+  filter: drop-shadow(0 0 20px rgb(255 107 44 / 0.25));
 }
 
 /* Custom scrollbar matching warm luxury theme */
@@ -50,23 +63,23 @@
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F8F6F1;
+  background: #0A0A0F;
 }
 ::-webkit-scrollbar-thumb {
-  background: #DDD8CE;
+  background: #2A2933;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #B08D57;
+  background: #FF6B2C;
 }
 
 /* Professional smooth scroll */
 html {
   scroll-behavior: smooth;
-  background-color: #F8F6F1;
+  background-color: #0A0A0F;
 }
 
 ::selection {
-  background-color: rgba(176, 141, 87, 0.25);
-  color: #14213D;
+  background-color: rgb(255 107 44 / 0.35);
+  color: #F3F1EA;
 }

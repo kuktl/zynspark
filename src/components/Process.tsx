@@ -59,7 +59,7 @@ export default function Process() {
                   y: step.bounce.y,
                   rotate: step.bounce.rotate,
                   scale: 1.03,
-                  boxShadow: "0 20px 40px rgba(176,141,87,0.15)",
+                  boxShadow: "0 20px 40px rgba(255,107,44,0.15)",
                   transition: {
                     type: "spring",
                     stiffness: step.bounce.stiffness,

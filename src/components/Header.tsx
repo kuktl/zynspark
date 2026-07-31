@@ -48,7 +48,7 @@ export default function Header() {
           whileTap={{ scale: 0.95 }}
         >
           <motion.span
-            className="w-8 h-8 rounded-sm bg-brand-gold flex items-center justify-center text-white font-serif font-extrabold text-sm tracking-wider shadow-md"
+            className="w-8 h-8 rounded-sm bg-brand-gold flex items-center justify-center text-paper font-serif font-extrabold text-sm tracking-wider shadow-md"
             whileHover={{ rotate: 18, scale: 1.15 }}
             transition={{ type: "spring", stiffness: 400, damping: 8 }}
           >
@@ -82,12 +82,12 @@ export default function Header() {
         <div className="hidden md:flex items-center gap-3">
           <motion.button
             onClick={openPopup}
-            className="inline-flex items-center justify-center px-5 py-2.5 text-[10px] font-bold tracking-widest uppercase border border-brand-gold bg-brand-gold text-white rounded-sm cursor-pointer shadow-md shadow-brand-gold/15"
+            className="inline-flex items-center justify-center px-5 py-2.5 text-[10px] font-bold tracking-widest uppercase border border-brand-gold bg-brand-gold text-paper rounded-sm cursor-pointer shadow-md shadow-brand-gold/15"
             id="header-cta"
             whileHover={{
               scale: 1.08,
               y: -4,
-              boxShadow: "0 10px 25px rgba(176,141,87,0.3)",
+              boxShadow: "0 10px 25px rgba(255,107,44,0.3)",
               transition: { type: "spring", stiffness: 450, damping: 10 },
             }}
             whileTap={{ scale: 0.95 }}
@@ -126,7 +126,7 @@ export default function Header() {
               </a>
             ))}
             <button
-              className="inline-flex items-center justify-center px-5 py-3 text-xs font-bold tracking-widest uppercase bg-brand-gold text-white rounded-sm text-center mt-2 cursor-pointer"
+              className="inline-flex items-center justify-center px-5 py-3 text-xs font-bold tracking-widest uppercase bg-brand-gold text-paper rounded-sm text-center mt-2 cursor-pointer"
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 openPopup();

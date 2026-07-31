@@ -32,7 +32,7 @@ const leftStickers = [
     id: "meta-ads",
     text: "META ADS",
     icon: "Megaphone",
-    className: "bg-[#FFD4C2] text-[#5C230C] -rotate-12",
+    className: "bg-[#3B1D16] text-spark border border-spark-dim -rotate-12",
     top: "14%",
     left: "5%",
     scale: 1.05
@@ -41,7 +41,7 @@ const leftStickers = [
     id: "c-api",
     text: "SERVER C-API",
     icon: "KeyRound",
-    className: "bg-[#FBCFE8] text-[#5B21B6] rotate-12",
+    className: "bg-[#132B32] text-volt border border-volt-dim rotate-12",
     top: "32%",
     left: "12%",
     scale: 0.95
@@ -49,7 +49,7 @@ const leftStickers = [
   {
     id: "attribution",
     type: "stamp-attribution", // Rotating stamp
-    className: "bg-white text-black",
+    className: "bg-panel text-paper",
     top: "48%",
     left: "3%",
     scale: 1
@@ -58,7 +58,7 @@ const leftStickers = [
     id: "fast-pages",
     text: "FAST PAGES",
     icon: "Zap",
-    className: "bg-[#CCEFFF] text-[#0A4B6B] rotate-6",
+    className: "bg-[#132B32] text-volt border border-volt-dim rotate-6",
     top: "66%",
     left: "11%",
     scale: 1.1
@@ -67,7 +67,7 @@ const leftStickers = [
     id: "strict-nda",
     text: "STRICT NDAs",
     icon: "ShieldCheck",
-    className: "bg-[#D1FAE5] text-[#065F46] -rotate-12",
+    className: "bg-panel-2 text-paper border border-line -rotate-12",
     top: "80%",
     left: "4%",
     scale: 1
@@ -79,7 +79,7 @@ const rightStickers = [
     id: "crm-sync",
     text: "CRM SYNC",
     icon: "Cpu",
-    className: "bg-[#FFE4BC] text-[#78350F] rotate-12",
+    className: "bg-[#3B1D16] text-spark border border-spark-dim rotate-12",
     top: "15%",
     right: "5%",
     scale: 1.05
@@ -88,7 +88,7 @@ const rightStickers = [
     id: "ab-testing",
     text: "A/B TESTING",
     icon: "Sliders",
-    className: "bg-[#CCEFFF] text-[#0A4B6B] -rotate-6",
+    className: "bg-[#132B32] text-volt border border-volt-dim -rotate-6",
     top: "34%",
     right: "12%",
     scale: 0.95
@@ -97,7 +97,7 @@ const rightStickers = [
     id: "lead-engine",
     type: "stamp-seal", // Scalloped seal
     text: "FUNNEL ENGINE",
-    className: "bg-white text-black",
+    className: "bg-panel text-paper",
     top: "50%",
     right: "3%",
     scale: 1
@@ -106,7 +106,7 @@ const rightStickers = [
     id: "custom-code",
     text: "CUSTOM CODE",
     icon: "Terminal",
-    className: "bg-[#FBCFE8] text-[#5B21B6] -rotate-12",
+    className: "bg-[#132B32] text-volt border border-volt-dim -rotate-12",
     top: "68%",
     right: "11%",
     scale: 1.1
@@ -115,7 +115,7 @@ const rightStickers = [
     id: "growth-scale",
     text: "GROWTH SCALE",
     icon: "TrendingUp",
-    className: "bg-[#FFE4BC] text-[#78350F] rotate-12",
+    className: "bg-[#3B1D16] text-spark border border-spark-dim rotate-12",
     top: "82%",
     right: "4%",
     scale: 1
@@ -171,7 +171,7 @@ export default function Hero() {
                     zIndex: 40
                   }}
                 >
-                  <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center relative shadow-xl p-1 border border-brand-gray-border">
+                  <div className="w-24 h-24 bg-panel rounded-full flex items-center justify-center relative shadow-xl p-1 border border-brand-gray-border">
                     <svg viewBox="0 0 100 100" className="w-full h-full animate-spin" style={{ animationDuration: '24s' }}>
                       <path id="attributionPath" d="M 50, 50 m -38, 0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" fill="none" />
                       <text className="text-[7.2px] font-bold font-mono tracking-[0.24em] fill-black uppercase">
@@ -237,7 +237,7 @@ export default function Hero() {
               <div className="absolute w-5 h-5 rounded-full bg-brand-gold/15 blur-lg group-hover:bg-brand-gold/25 transition-all duration-500" />
               
               {/* Geometric spark vector icon */}
-              <svg viewBox="0 0 24 24" className="w-6 h-6 text-brand-gold relative z-10 filter drop-shadow-[0_0_8px_rgba(176,141,87,0.35)] transition-transform duration-500 group-hover:scale-110" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg viewBox="0 0 24 24" className="w-6 h-6 text-brand-gold relative z-10 filter drop-shadow-[0_0_8px_rgba(255,107,44,0.35)] transition-transform duration-500 group-hover:scale-110" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="currentColor" className="opacity-15" />
                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
               </svg>
@@ -246,7 +246,7 @@ export default function Hero() {
 
           {/* High-Impact Centered Headlines */}
           <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-black tracking-tight text-brand-navy leading-[1.18] mb-4 uppercase max-w-3xl mx-auto">
-            Helping Businesses Grow with Better Websites, Smarter Marketing & <span className="text-brand-gold">AI Automation</span>.
+            Helping Businesses Grow with Better Websites, Smarter Marketing & <span className="text-volt">AI Automation</span>.
           </h1>
 
           {/* Subheading / Tagline */}
@@ -264,12 +264,12 @@ export default function Hero() {
             <motion.button
               type="button"
               onClick={() => window.dispatchEvent(new CustomEvent("open_quote_modal"))}
-              className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 bg-brand-gold text-white border border-brand-gold font-extrabold text-xs tracking-widest uppercase rounded-xl shadow-xl shadow-brand-gold/15 font-sans gap-2 cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 bg-brand-gold text-paper border border-brand-gold font-extrabold text-xs tracking-widest uppercase rounded-xl shadow-xl shadow-brand-gold/15 font-sans gap-2 cursor-pointer"
               id="hero-primary-cta"
               whileHover={{
                 scale: 1.08,
                 y: -6,
-                boxShadow: "0 15px 35px rgba(176,141,87,0.35)",
+                boxShadow: "0 15px 35px rgba(255,107,44,0.35)",
                 transition: { type: "spring", stiffness: 450, damping: 10 },
               }}
               whileTap={{ scale: 0.95 }}
@@ -285,8 +285,8 @@ export default function Hero() {
               whileHover={{
                 scale: 1.06,
                 y: -5,
-                borderColor: "#B08D57",
-                color: "#B08D57",
+                borderColor: "#B8531F",
+                color: "#FF6B2C",
                 transition: { type: "spring", stiffness: 400, damping: 12 },
               }}
               whileTap={{ scale: 0.95 }}
@@ -302,7 +302,7 @@ export default function Hero() {
             {leftStickers.map((sticker) => {
               if (sticker.type === "stamp-attribution") {
                 return (
-                  <span key={sticker.id} className="inline-flex items-center gap-1.5 px-3 py-2 text-[9px] font-extrabold tracking-wider bg-white text-black border border-brand-gray-border rounded-full font-mono">
+                  <span key={sticker.id} className="inline-flex items-center gap-1.5 px-3 py-2 text-[9px] font-extrabold tracking-wider bg-panel text-paper border border-brand-gray-border rounded-full font-mono">
                     <ShieldCheck className="w-3.5 h-3.5 text-brand-gold" />
                     PRECISION ATTRIBUTION
                   </span>
@@ -319,7 +319,7 @@ export default function Hero() {
             {rightStickers.map((sticker) => {
               if (sticker.type === "stamp-seal") {
                 return (
-                  <span key={sticker.id} className="inline-flex items-center gap-1.5 px-3 py-2 text-[9px] font-extrabold tracking-wider bg-white text-black border border-brand-gray-border rounded-full font-mono">
+                  <span key={sticker.id} className="inline-flex items-center gap-1.5 px-3 py-2 text-[9px] font-extrabold tracking-wider bg-panel text-paper border border-brand-gray-border rounded-full font-mono">
                     <TrendingUp className="w-3.5 h-3.5 text-brand-gold" />
                     FUNNEL ENGINE
                   </span>
@@ -344,8 +344,8 @@ export default function Hero() {
             whileHover={{
               y: -8,
               scale: 1.02,
-              borderColor: "rgba(176,141,87,0.5)",
-              boxShadow: "0 20px 40px rgba(176,141,87,0.15)",
+              borderColor: "rgba(255,107,44,0.5)",
+              boxShadow: "0 20px 40px rgba(255,107,44,0.15)",
               transition: { type: "spring", stiffness: 350, damping: 14 },
             }}
           >
@@ -405,11 +405,11 @@ export default function Hero() {
                     zIndex: 40
                   }}
                 >
-                  <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center relative shadow-xl border-4 border-double border-[#1F1F24]">
-                    <div className="absolute inset-1.5 border border-dashed border-[#1F1F24] rounded-full flex flex-col items-center justify-center p-1 text-center">
-                      <span className="text-[8px] font-mono font-black tracking-tight text-black leading-none mb-1">FUNNEL</span>
+                  <div className="w-24 h-24 bg-panel rounded-full flex items-center justify-center relative shadow-xl border-4 border-double border-line">
+                    <div className="absolute inset-1.5 border border-dashed border-line rounded-full flex flex-col items-center justify-center p-1 text-center">
+                      <span className="text-[8px] font-mono font-black tracking-tight text-paper leading-none mb-1">FUNNEL</span>
                       <TrendingUp className="w-4 h-4 text-brand-gold my-0.5" />
-                      <span className="text-[7.5px] font-mono font-black tracking-widest text-black leading-none mt-1">ENGINE</span>
+                      <span className="text-[7.5px] font-mono font-black tracking-widest text-paper leading-none mt-1">ENGINE</span>
                     </div>
                   </div>
                 </motion.div>
@@ -455,4 +455,3 @@ export default function Hero() {
     </section>
   );
 }
-
