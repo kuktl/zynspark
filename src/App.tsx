@@ -13,6 +13,7 @@ import FAQ from "./components/FAQ";
 import ContactFooter from "./components/ContactFooter";
 import QuoteModal from "./components/QuoteModal";
 import AnimatedSection from "./components/AnimatedSection";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App() {
   return (
@@ -65,6 +66,7 @@ export default function App() {
 
       {/* Interactive Project Quote Request Modal */}
       <QuoteModal />
+      <Analytics />
     </div>
   );
 }
