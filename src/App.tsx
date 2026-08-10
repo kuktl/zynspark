@@ -16,15 +16,14 @@ const FAQ = lazy(() => import("./components/FAQ"));
 const ContactFooter = lazy(() => import("./components/ContactFooter"));
 const QuoteModal = lazy(() => import("./components/QuoteModal"));
 const AnimatedSection = lazy(() => import("./components/AnimatedSection"));
-const Analytics = lazy(() => import("@vercel/analytics/react").then(({ Analytics }) => ({ default: Analytics })));
 
 export default function App() {
   return (
     <div className="min-h-screen bg-brand-cream text-brand-navy selection:bg-brand-gold/20 selection:text-brand-navy antialiased bg-grid-pattern relative">
       {/* Subtly glowing atmospheric lights mimicking luxury webflow sites */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-brand-gold/5 rounded-full blur-[120px] pointer-events-none z-0"></div>
-      <div className="absolute top-[1200px] right-1/4 w-[600px] h-[600px] bg-brand-gold/5 rounded-full blur-[140px] pointer-events-none z-0"></div>
-      <div className="absolute bottom-[1000px] left-10 w-[400px] h-[400px] bg-brand-gold/5 rounded-full blur-[100px] pointer-events-none z-0"></div>
+      <div className="hidden md:block absolute top-0 left-1/4 w-[500px] h-[500px] bg-brand-gold/5 rounded-full blur-[120px] pointer-events-none z-0"></div>
+      <div className="hidden md:block absolute top-[1200px] right-1/4 w-[600px] h-[600px] bg-brand-gold/5 rounded-full blur-[140px] pointer-events-none z-0"></div>
+      <div className="hidden md:block absolute bottom-[1000px] left-10 w-[400px] h-[400px] bg-brand-gold/5 rounded-full blur-[100px] pointer-events-none z-0"></div>
 
       {/* Dynamic Header / Navigation */}
       <Header />
@@ -70,7 +69,6 @@ export default function App() {
 
       <Suspense fallback={null}>
         <QuoteModal />
-        <Analytics />
       </Suspense>
     </div>
   );

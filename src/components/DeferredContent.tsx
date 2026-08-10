@@ -8,7 +8,7 @@ interface DeferredContentProps {
 /** Renders non-critical page sections only as the visitor nears them. */
 export default function DeferredContent({
   children,
-  rootMargin = "600px 0px",
+  rootMargin = "0px",
 }: DeferredContentProps) {
   const markerRef = useRef<HTMLDivElement>(null);
   const [isReady, setIsReady] = useState(false);

@@ -1,4 +1,4 @@
-import { useState, useEffect, FormEvent } from "react";
+import { createElement, FormEvent, ReactNode, useEffect, useState } from "react";
 import {
   X,
   Sparkles,
@@ -9,7 +9,23 @@ import {
   ShieldCheck,
   MessageSquare,
 } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+
+// The modal opens on demand; CSS transitions are sufficient here and avoid
+// loading an animation engine on the initial mobile render.
+const withoutAnimationProps = ({
+  initial,
+  animate,
+  exit,
+  transition,
+  whileHover,
+  whileTap,
+  ...props
+}: Record<string, unknown>) => props;
+const motion = {
+  div: (props: Record<string, unknown>) => createElement("div", withoutAnimationProps(props)),
+  button: (props: Record<string, unknown>) => createElement("button", withoutAnimationProps(props)),
+};
+const AnimatePresence = ({ children }: { children: ReactNode }) => <>{children}</>;
 
 const FORMCARRY_ENDPOINT = "https://formcarry.com/s/cWVBr3t_5Lr";
 
