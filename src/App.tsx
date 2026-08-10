@@ -16,6 +16,7 @@ const FAQ = lazy(() => import("./components/FAQ"));
 const ContactFooter = lazy(() => import("./components/ContactFooter"));
 const QuoteModal = lazy(() => import("./components/QuoteModal"));
 const AnimatedSection = lazy(() => import("./components/AnimatedSection"));
+const isServer = typeof window === "undefined";
 
 export default function App() {
   return (
@@ -67,9 +68,11 @@ export default function App() {
         </DeferredContent>
       </main>
 
-      <Suspense fallback={null}>
-        <QuoteModal />
-      </Suspense>
+      {!isServer && (
+        <Suspense fallback={null}>
+          <QuoteModal />
+        </Suspense>
+      )}
     </div>
   );
 }
