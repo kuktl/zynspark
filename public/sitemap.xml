@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://zynspark-nu.vercel.app/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://www.zynspark.in/</loc>
+  </url>
+  <url>
+    <loc>https://www.zynspark.in/about</loc>
+  </url>
+  <url>
+    <loc>https://www.zynspark.in/services</loc>
+  </url>
+  <url>
+    <loc>https://www.zynspark.in/contact</loc>
+  </url>
+  <url>
+    <loc>https://www.zynspark.in/portfolio</loc>
   </url>
 </urlset>
