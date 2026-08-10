@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { createElement } from "react";
 import { 
   ArrowRight, 
   ShieldCheck, 
@@ -12,6 +12,22 @@ import {
   Infinity, 
   Chrome 
 } from "lucide-react";
+
+// The hero is the largest above-the-fold region. Keep its interactions in CSS
+// so the animation runtime is not part of the critical JavaScript bundle.
+const withoutAnimationProps = ({
+  initial,
+  animate,
+  transition,
+  whileHover,
+  whileTap,
+  ...props
+}: Record<string, unknown>) => props;
+const motion = {
+  div: (props: Record<string, unknown>) => createElement("div", withoutAnimationProps(props)),
+  button: (props: Record<string, unknown>) => createElement("button", withoutAnimationProps(props)),
+  a: (props: Record<string, unknown>) => createElement("a", withoutAnimationProps(props)),
+};
 
 // Lucide icon helper map for type safety
 const iconMap = {

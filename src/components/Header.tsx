@@ -1,6 +1,17 @@
-import { useState, useEffect } from "react";
+import { createElement, useState, useEffect } from "react";
 import { Menu, X, ArrowRight, Sparkles } from "lucide-react";
-import { motion } from "motion/react";
+
+const withoutAnimationProps = ({
+  whileHover,
+  whileTap,
+  transition,
+  ...props
+}: Record<string, unknown>) => props;
+const motion = {
+  a: (props: Record<string, unknown>) => createElement("a", withoutAnimationProps(props)),
+  span: (props: Record<string, unknown>) => createElement("span", withoutAnimationProps(props)),
+  button: (props: Record<string, unknown>) => createElement("button", withoutAnimationProps(props)),
+};
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,7 +26,7 @@ export default function Header() {
   }, []);
 
   const openPopup = () => {
-    window.dispatchEvent(new CustomEvent("open_consultation_popup"));
+    window.dispatchEvent(new CustomEvent("open_quote_modal"));
   };
 
   const navLinks = [
