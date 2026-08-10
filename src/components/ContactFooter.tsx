@@ -211,7 +211,7 @@ export default function ContactFooter() {
               Ready to Grow Your Business?
             </h2>
             <p className="text-sm md:text-base text-brand-navy-light/80 leading-relaxed mb-10">
-              Let's discuss how better websites, smarter marketing, and AI automation can work together for your business.
+              Tell us about your goals. We will recommend the right mix of website development, performance marketing, and AI lead automation for your business.
             </p>
 
             {/* Direct listings with bouncy hover */}

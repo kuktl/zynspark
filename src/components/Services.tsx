@@ -109,10 +109,10 @@ export default function Services() {
             <span className="w-4 h-[1px] bg-brand-gold"></span> OUR SOLUTIONS
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-brand-navy uppercase leading-tight">
-            Everything Your Business Needs to Grow.
+            Digital Growth Services for More Leads and Better Follow-Up.
           </h2>
           <p className="text-sm md:text-base text-brand-navy-light/70 mt-4 leading-relaxed">
-            Every business wants more customers, smoother operations, and sustainable growth. Our solutions are designed to make that happen.
+            Choose website development, performance marketing, AI lead automation, and search optimisation services that work together around clear business goals.
           </p>
         </div>
 

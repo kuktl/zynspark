@@ -71,7 +71,7 @@ export default function Results() {
               <span className="w-4 h-[1px] bg-brand-gold"></span> INDUSTRIES WE SERVE
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-brand-navy uppercase leading-tight">
-              Built for Businesses Ready to Scale.
+              Digital Growth Services for Businesses in Every Industry.
             </h2>
             <p className="text-sm md:text-base text-brand-navy-light/75 mt-4 leading-relaxed">
               Every industry has unique challenges. Our solutions are tailored to help you reach the right audience, generate qualified leads, and streamline your operations.

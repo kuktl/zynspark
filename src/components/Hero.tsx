@@ -262,7 +262,7 @@ export default function Hero() {
 
           {/* High-Impact Centered Headlines */}
           <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-black tracking-tight text-brand-navy leading-[1.18] mb-4 uppercase max-w-3xl mx-auto">
-            Helping Businesses Grow with Better Websites, Smarter Marketing & <span className="text-volt">AI Automation</span>.
+            Website, Performance Marketing & <span className="text-volt">AI Automation</span> for Growing Businesses.
           </h1>
 
           {/* Subheading / Tagline */}
@@ -272,7 +272,7 @@ export default function Hero() {
 
           {/* Description */}
           <p className="font-sans text-xs sm:text-sm font-normal text-brand-navy-light/80 max-w-2xl mx-auto mb-6 leading-relaxed">
-            Whether you're looking to attract more customers, build a stronger online presence, or save time through automation, Zynspark brings everything together under one roof. We combine strategy, technology, and AI to help businesses grow with solutions that work together—not separately.
+            Zynspark builds high-converting websites, manages performance marketing campaigns, and automates lead follow-up so growing businesses can attract, respond to, and convert more enquiries.
           </p>
 
           {/* Core CTAs */}

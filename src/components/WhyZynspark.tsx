@@ -40,13 +40,13 @@ export default function WhyZynspark() {
                 Why Businesses Choose Zynspark
               </h2>
               <p className="text-lg md:text-xl font-bold text-brand-gold leading-snug">
-                Most businesses don't need another agency. They need a partner who understands how everything works together.
+                Zynspark combines your website, advertising, lead follow-up, and reporting in one coordinated growth plan.
               </p>
             </div>
             
             <div className="lg:col-span-6 lg:pl-6 space-y-4">
               <p className="text-sm md:text-base text-brand-navy-light/80 leading-relaxed">
-                At Zynspark, we don't treat websites, marketing, and automation as separate services. We build connected systems where every solution supports the next.
+                We connect website development, marketing campaigns, and automation workflows so each stage supports the next step: attracting visitors, capturing enquiries, and following up with leads.
               </p>
               <motion.div
                 className="p-5 bg-brand-gray-light border border-brand-gray-border rounded-sm shadow-sm space-y-2 cursor-pointer"

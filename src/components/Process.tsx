@@ -44,7 +44,7 @@ export default function Process() {
             How We Work
           </h2>
           <p className="text-sm md:text-base text-brand-navy-light/70 mt-4 leading-relaxed">
-            Standardized, transparent growth methodology built to take your business from strategy to sustained expansion.
+            We start with your goals, build the right website, marketing, and automation plan, then measure and improve the work over time.
           </p>
         </div>
 
