@@ -1,4 +1,4 @@
-import { createElement } from "react";
+import { createElement, useEffect, useState } from "react";
 import { 
   ArrowRight, 
   ShieldCheck, 
@@ -139,6 +139,18 @@ const rightStickers = [
 ];
 
 export default function Hero() {
+  // Decorative desktop-only elements are added after the initial paint so
+  // mobile visitors do not download or parse hidden visual chrome.
+  const [showDesktopDecorations, setShowDesktopDecorations] = useState(false);
+
+  useEffect(() => {
+    if (window.matchMedia("(min-width: 1024px)").matches) {
+      setShowDesktopDecorations(true);
+    }
+  }, []);
+
+  const mobileStickers = [...leftStickers.slice(0, 2), ...rightStickers.slice(0, 2)];
+
   return (
     <section
       className="relative pt-16 pb-16 md:pt-24 md:pb-20 bg-brand-cream border-b border-brand-gray-border overflow-hidden select-none"
@@ -157,7 +169,7 @@ export default function Hero() {
         {/* =========================================================
             DESKTOP STICKERS (LEFT) - Absolute floating layouts
             ========================================================= */}
-        <div className="hidden lg:block">
+        {showDesktopDecorations && <div className="hidden lg:block">
           {leftStickers.map((sticker, idx) => {
             if (sticker.type === "stamp-attribution") {
               return (
@@ -239,7 +251,7 @@ export default function Hero() {
               </motion.div>
             );
           })}
-        </div>
+        </div>}
 
         {/* =========================================================
             CENTRAL APP-LIKE CONTENT (STRICTLY CENTERED AS REFERENCE)
@@ -315,32 +327,7 @@ export default function Hero() {
               MOBILE/TABLET PILL CLOUD (Only visible on screens < lg)
               ========================================================= */}
           <div className="lg:hidden flex flex-wrap justify-center gap-2 px-2 max-w-2xl mx-auto mb-10 relative z-20">
-            {leftStickers.map((sticker) => {
-              if (sticker.type === "stamp-attribution") {
-                return (
-                  <span key={sticker.id} className="inline-flex items-center gap-1.5 px-3 py-2 text-[9px] font-extrabold tracking-wider bg-panel text-paper border border-brand-gray-border rounded-full font-mono">
-                    <ShieldCheck className="w-3.5 h-3.5 text-brand-gold" />
-                    PRECISION ATTRIBUTION
-                  </span>
-                );
-              }
-              const IconComponent = iconMap[sticker.icon || 'Zap'];
-              return (
-                <span key={sticker.id} className={`inline-flex items-center gap-1.5 px-3 py-2 text-[9px] font-extrabold tracking-wider rounded-full ${sticker.className.split(' ').filter(c => !c.includes('rotate') && !c.includes('scale')).join(' ')}`}>
-                  <IconComponent className="w-3.5 h-3.5" />
-                  {sticker.text}
-                </span>
-              );
-            })}
-            {rightStickers.map((sticker) => {
-              if (sticker.type === "stamp-seal") {
-                return (
-                  <span key={sticker.id} className="inline-flex items-center gap-1.5 px-3 py-2 text-[9px] font-extrabold tracking-wider bg-panel text-paper border border-brand-gray-border rounded-full font-mono">
-                    <TrendingUp className="w-3.5 h-3.5 text-brand-gold" />
-                    FUNNEL ENGINE
-                  </span>
-                );
-              }
+            {mobileStickers.map((sticker) => {
               const IconComponent = iconMap[sticker.icon || 'Zap'];
               return (
                 <span key={sticker.id} className={`inline-flex items-center gap-1.5 px-3 py-2 text-[9px] font-extrabold tracking-wider rounded-full ${sticker.className.split(' ').filter(c => !c.includes('rotate') && !c.includes('scale')).join(' ')}`}>
@@ -391,7 +378,7 @@ export default function Hero() {
         {/* =========================================================
             DESKTOP STICKERS (RIGHT) - Absolute floating layouts
             ========================================================= */}
-        <div className="hidden lg:block">
+        {showDesktopDecorations && <div className="hidden lg:block">
           {rightStickers.map((sticker, idx) => {
             if (sticker.type === "stamp-seal") {
               return (
@@ -465,7 +452,7 @@ export default function Hero() {
               </motion.div>
             );
           })}
-        </div>
+        </div>}
 
       </div>
     </section>
