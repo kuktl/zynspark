@@ -57,13 +57,19 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <!-- Google tag (gtag.js): placed after application markup so CSS and content paint first. -->
-    <script async fetchpriority="low" src="https://www.googletagmanager.com/gtag/js?id=G-QBW5WK1W4C"></script>
+    <!-- Analytics starts only after the initial page load to protect mobile LCP. -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-QBW5WK1W4C');
+
+      window.addEventListener('load', function () {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-QBW5WK1W4C';
+        document.head.appendChild(script);
+        gtag('js', new Date());
+        gtag('config', 'G-QBW5WK1W4C');
+      }, { once: true });
     </script>
   </body>
 </html>
