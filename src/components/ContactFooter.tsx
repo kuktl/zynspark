@@ -2,8 +2,7 @@ import { useState, FormEvent } from "react";
 import { Mail, Phone, Clock, MapPin, Send, CheckCircle2, ArrowRight, AlertCircle, Shield } from "lucide-react";
 import { motion } from "motion/react";
 import { ContactFormInput } from "../types";
-
-const FORMCARRY_ENDPOINT = "https://formcarry.com/s/cWVBr3t_5Lr";
+import { submitLead } from "../lib/leadCapture";
 
 export default function ContactFooter() {
   const [formInput, setFormInput] = useState<ContactFormInput>({
@@ -19,31 +18,10 @@ export default function ContactFooter() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // Formcarry integrations state
-  const [formcarryEndpoint, setFormcarryEndpoint] = useState<string>(() => {
-    return localStorage.getItem("zynspark_formcarry_endpoint") || (import.meta as any).env?.VITE_FORMCARRY_ENDPOINT || FORMCARRY_ENDPOINT;
-  });
-  const [formcarryReturnUrl, setFormcarryReturnUrl] = useState<string>(() => {
-    return localStorage.getItem("zynspark_formcarry_return_url") || (import.meta as any).env?.VITE_FORMCARRY_RETURN_URL || "";
-  });
-  const [isFormcarryEnabled, setIsFormcarryEnabled] = useState<boolean>(() => {
-    const saved = localStorage.getItem("zynspark_formcarry_enabled");
-    if (saved !== null) return saved === "true";
-    return true;
-  });
   const [formError, setFormError] = useState<string | null>(null);
 
   // Hidden Honeypot for silent background bot protection
   const [honeypotValue, setHoneypotValue] = useState("");
-
-  const getNormalizedEndpoint = (val: string) => {
-    if (!val) return "";
-    const trimmed = val.trim();
-    if (trimmed.startsWith("http://") || trimmed.startsWith("https://")) {
-      return trimmed;
-    }
-    return `https://formcarry.com/s/${trimmed}`;
-  };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -109,73 +87,23 @@ export default function ContactFooter() {
       }
     }
 
-    const endpoint = formcarryEndpoint.trim();
-    const useFormcarry = isFormcarryEnabled && endpoint;
-
-    if (useFormcarry) {
-      const targetUrl = getNormalizedEndpoint(endpoint);
-      try {
-        const response = await fetch(targetUrl, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-          },
-          body: JSON.stringify({
-            ...formInput,
-            _next: formcarryReturnUrl.trim() || undefined
-          })
-        });
-
-        if (response.ok) {
-          localStorage.setItem("zynspark_last_submit_time", Date.now().toString());
-          try {
-            const existingInquiries = JSON.parse(localStorage.getItem("zynspark_inquiries") || "[]");
-            existingInquiries.push({
-              ...formInput,
-              submittedAt: new Date().toISOString(),
-              sentToFormcarry: true,
-            });
-            localStorage.setItem("zynspark_inquiries", JSON.stringify(existingInquiries));
-          } catch (err) {
-            console.error("Local save error:", err);
-          }
-          setIsSubmitted(true);
-
-          if (formcarryReturnUrl.trim()) {
-            setTimeout(() => {
-              window.location.href = formcarryReturnUrl.trim();
-            }, 1000);
-          }
-        } else {
-          const result = await response.json().catch(() => ({}));
-          throw new Error(result.message || `Formcarry returned status ${response.status}`);
-        }
-      } catch (err: any) {
-        console.error("Formcarry submission failed:", err);
-        setFormError(err?.message || "Failed to submit form. Please check your Endpoint/ID and connection.");
-      } finally {
-        setIsSubmitting(false);
-      }
-    } else {
-      // Direct clean submission flow
-      setTimeout(() => {
-        localStorage.setItem("zynspark_last_submit_time", Date.now().toString());
-        try {
-          const existingInquiries = JSON.parse(localStorage.getItem("zynspark_inquiries") || "[]");
-          existingInquiries.push({
-            ...formInput,
-            submittedAt: new Date().toISOString(),
-            sentToFormcarry: false,
-          });
-          localStorage.setItem("zynspark_inquiries", JSON.stringify(existingInquiries));
-        } catch (err) {
-          console.error("Failed to save inquiry to localStorage", err);
-        }
-
-        setIsSubmitting(false);
-        setIsSubmitted(true);
-      }, 800);
+    try {
+      await submitLead({
+        name: formInput.name.trim(),
+        phone: formInput.phone?.trim() || "",
+        email: formInput.email.trim(),
+        service: formInput.service,
+        details: formInput.message.trim(),
+        company: formInput.company?.trim() || "",
+        website: "",
+      });
+      localStorage.setItem("zynspark_last_submit_time", Date.now().toString());
+      setIsSubmitted(true);
+    } catch (err: any) {
+      console.error("Lead submission failed:", err);
+      setFormError(err?.message || "Unable to submit your request. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 

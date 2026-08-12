@@ -9,6 +9,7 @@ import {
   ShieldCheck,
   MessageSquare,
 } from "lucide-react";
+import { submitLead } from "../lib/leadCapture";
 
 // The modal opens on demand; CSS transitions are sufficient here and avoid
 // loading an animation engine on the initial mobile render.
@@ -26,8 +27,6 @@ const motion = {
   button: (props: Record<string, unknown>) => createElement("button", withoutAnimationProps(props)),
 };
 const AnimatePresence = ({ children }: { children: ReactNode }) => <>{children}</>;
-
-const FORMCARRY_ENDPOINT = "https://formcarry.com/s/cWVBr3t_5Lr";
 
 export default function QuoteModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -100,34 +99,21 @@ export default function QuoteModal() {
       // ignore storage errors
     }
 
-    // Submit to Formcarry endpoint if configured
-    const endpoint =
-      localStorage.getItem("zynspark_formcarry_endpoint") ||
-      (import.meta as any).env?.VITE_FORMCARRY_ENDPOINT ||
-      FORMCARRY_ENDPOINT;
-    if (endpoint.trim()) {
-      let url = endpoint.trim();
-      if (!url.startsWith("http")) {
-        url = `https://formcarry.com/s/${url}`;
-      }
-      try {
-        const response = await fetch(url, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify(payload),
-        });
-        if (!response.ok) {
-          throw new Error(`Form submission failed with status ${response.status}`);
-        }
-      } catch (err) {
-        console.warn("Formcarry dispatch warning:", err);
-        alert("We couldn't send your request right now. Please try again or contact us on WhatsApp.");
-        setIsSubmitting(false);
-        return;
-      }
+    try {
+      await submitLead({
+        name: payload.name,
+        phone: payload.phone,
+        email: payload.email,
+        service: "Quick Quote Request",
+        details: payload.requirement,
+        company: "",
+        website: "",
+      });
+    } catch (err) {
+      console.warn("Lead submission warning:", err);
+      alert("We couldn't send your request right now. Please try again or contact us on WhatsApp.");
+      setIsSubmitting(false);
+      return;
     }
 
     setIsSubmitting(false);
